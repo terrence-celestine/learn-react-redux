@@ -21,6 +21,9 @@ export const formSlice = createSlice({
         updateFirstName: (state, action: PayloadAction<string>) => {
             state.firstName = action.payload;
         },
+        updateLastName: (state, action: PayloadAction<string>) => {
+            state.lastName = action.payload;
+        },
         resetName: (state) => {
             state.firstName = "";
             state.lastName = "";
@@ -29,7 +32,7 @@ export const formSlice = createSlice({
 });
 
 // export the slice actions
-export const { updateFirstName, resetName} = formSlice.actions;
+export const { updateFirstName, updateLastName, resetName} = formSlice.actions;
 
 // export the selector, this will be used in other files as the state value
 export const selectForm = (state:RootState) => state.form;
